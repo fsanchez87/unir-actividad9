@@ -9,6 +9,16 @@ var debug = require('debug')('unir-actividad9:server');
 var http = require('http');
 
 /**
+ * Load environment file
+ */
+require('dotenv').config()
+
+/**
+ * Database configuration
+ */
+
+
+/**
  * Get port from environment and store in Express.
  */
 
