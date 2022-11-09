@@ -1,4 +1,4 @@
-const { getAll, getById, create } = require("../../models/post.model copy");
+const { getAll, getById, create, getByAutor } = require("../../models/post.model copy");
 
 const router = require("express").Router();
 
@@ -39,8 +39,18 @@ router.post("/", async (req, res) => {
 });
 
 // http://localhost:3000/api/posts/posts-autor/1
-router.get("/posts-autor/:autorId", (req, res) => {
-    res.send("GET posts-autor");
+router.get("/posts-autor/:autorId", async(req, res) => {
+    const { autorId } = req.params;
+    try {
+        const post = await getByAutor(autorId);
+        if (post === null) {
+            res.json({ Error: "No exite un post con ese ID de autor" });
+        } else {
+            res.json(post);
+        }
+    } catch (error) {
+        res.json({ Error: error.message });
+    }
 });
 
 module.exports = router;
