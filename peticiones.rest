@@ -22,5 +22,15 @@ GET http://localhost:3000/api/posts
 GET http://localhost:3000/api/posts/1
 ###
 POST http://localhost:3000/api/posts/
+Content-Type: application/json
+
+{    
+    "titulo": "Morbi non quam",
+    "descripcion": "nteger ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+     "fecha_creacion": "2021-08-17 05:51:46",
+    "categoria": "Entrevista",
+    "autor_id": 1
+}
+
 ###
 GET http://localhost:3000/api/posts/posts-autor/1
