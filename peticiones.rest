@@ -4,7 +4,26 @@ GET http://localhost:3000/api/autores
 GET http://localhost:3000/api/autores/1
 ###
 POST http://localhost:3000/api/autores
+Content-Type: application/json
 
+{
+    "nombre" : "Francisco",
+    "email" : "fs@gmail.com",
+    "imagen": "http://dummyimage.com/249x100.png/5fa2dd/ffffff"
+}
+
+###
+PUT http://localhost:3000/api/autores/18
+Content-Type: application/json
+
+{
+    "nombre" : "Curro",
+    "email" : "fs@gmail.com",
+    "imagen": "http://dummyimage.com/249x100.png/5fa2dd/ffffff"
+}
+
+###
+DELETE http://localhost:3000/api/autores/17
 
 
 
