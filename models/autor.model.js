@@ -15,15 +15,4 @@ const create = ({ nombre, email, imagen }) => {
     );
 };
 
-const update = (autorId, { nombre, email, imagen }) => {
-    return executeQuery(
-        "UPDATE autores set nombre = ?, email = ?, imagen = ? WHERE ID = ?",
-        [nombre, email, imagen, autorId]
-    );
-};
-
-const deleteById = (autorId) => {
-    return executeQuery("DELETE FROM autores where id = ?", [autorId]);
-};
-
-module.exports = { getAll, getById, create, deleteById, update };
+module.exports = { getAll, getById, create };
